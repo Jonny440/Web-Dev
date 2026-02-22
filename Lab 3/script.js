@@ -18,6 +18,31 @@ function addTask() {
   const checkbox = document.createElement('input');
   checkbox.type = 'checkbox';
 
+  const editBtn = document.createElement('button');
+  editBtn.className = 'delete-btn';
+  editBtn.innerText = 'Edit';
+
+  editBtn.addEventListener('click', () => {
+    const inputField = document.createElement('input');
+    if (editBtn.innerText == "Edit") {
+      
+      inputField.type = 'text';
+      inputField.value = span.textContent;
+      inputField.className = 'editInput';
+      li.replaceChild(inputField, span);
+      editBtn.innerText = 'Save';
+
+    } else {
+
+
+      const inputField = li.querySelector('.editInput');
+      span.textContent = inputField.value;
+      editBtn.innerText = 'Edit';
+      li.replaceChild(span, inputField);
+
+    }
+  })  
+
   const deleteBtn = document.createElement('button');
   deleteBtn.className = 'delete-btn';
   deleteBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>';
@@ -30,7 +55,7 @@ function addTask() {
     li.remove();
   });
 
-  li.append(checkbox, span, deleteBtn);
+  li.append(checkbox, span, editBtn, deleteBtn);
   taskList.appendChild(li);
 
   input.value = '';

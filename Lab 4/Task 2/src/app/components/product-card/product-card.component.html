@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="product-card.component.css">
+<div class="product-card">
+  <a [href]="product.link" target="_blank" class="product-image-link">
+    <img [src]="product.image" [alt]="product.name" class="product-image" />
+  </a>
+
+  <div class="product-info">
+    <a [href]="product.link" target="_blank" class="product-name-link">
+      <h3 class="product-name">{{ product.name }}</h3>
+    </a>
+
+    <p class="product-description">{{ product.description }}</p>
+
+    <div class="product-rating">
+      @for (star of getStars(product.rating); track $index) {
+        <span class="star" [class.full]="star === 'full'" [class.half]="star === 'half'" [class.empty]="star === 'empty'">
+          @if (star === 'full') { ★ }
+          @else { ☆ }
+        </span>
+      }
+      <span class="rating-number">{{ product.rating }}</span>
+    </div>
+
+    <div class="product-price">{{ product.price | number }} ₸</div>
+
+    <div class="product-actions">
+      <a [href]="product.link" target="_blank" class="btn btn-buy">Купить на Kaspi</a>
+        <button class="btn btn-whatsapp" (click)="shareOnWhatsApp()">Share WhatsApp</button>
+    </div>
+  </div>
+</div>

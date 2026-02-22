@@ -1,0 +1,58 @@
+.site-header {
+  background-color: #e4002b;
+  color: white;
+  padding: 16px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.logo-kaspi {
+  color: #fff;
+}
+
+.logo-store {
+  color: rgba(255,255,255,0.7);
+}
+
+.header-tagline {
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+  margin: 0;
+}
+
+main {
+  min-height: 80vh;
+  background: #f2f2f2;
+}
+
+.site-footer {
+  background: #1a1a1a;
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+.site-footer a {
+  color: #e4002b;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
