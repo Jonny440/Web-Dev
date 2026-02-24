@@ -1,0 +1,24 @@
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-kaspi">Kaspi</span>
+      <span class="logo-store">.kz</span>
+    </div>
+  </div>
+</header>
+
+<main>
+    <div class="category-bar">
+        @for (category of categories; track category.id) {
+            <button class="category-btn"
+                    [class.active]="selectedCategory?.id === category.id"
+                    (click)="selectCategory(category)">
+                {{category.name}}
+            </button>
+        }
+    </div>
+
+    @if (selectedCategory) {
+        <app-product-list [products]="products"></app-product-list>
+    }
+</main>

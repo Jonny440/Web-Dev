@@ -1,0 +1,24 @@
+<section class="catalog">
+  <div class="catalog-header">
+    <h2 class="catalog-title">доступные товары</h2>
+    <p class="catalog-subtitle">{{ displayedProducts.length }} товаров на Kaspi.kz</p>
+  </div>
+
+    <button class="btn filter-five-stars" [class.filterIsOn]="filterIsOn" (click)="showFiveStars()">{{filterIsOn ? "убрать фильтр" : "Показаит 5 звезд"}}</button>
+
+    @if (displayedProducts.length > 0) {
+        <div class="products-grid">
+            @for (product of displayedProducts; track product.id) {
+                <app-product-card
+                        [product]="product"
+                        (deleteProduct)="deleteProduct($event)">
+                </app-product-card>
+            }
+        </div>
+    } @else {
+        <div class="empty-message">
+            <p>В этой категории нет товаров</p>
+        </div>
+    }
+</section>
+
