@@ -1,0 +1,35 @@
+<div class="detail-page" *ngIf="!isLoading && album">
+  <div class="detail-card">
+    <div class="card-meta">
+      <span class="album-id">#{{ album.id }}</span>
+      <span class="user-id">User {{ album.userId }}</span>
+    </div>
+
+    <h2>{{ album.title }}</h2>
+
+    <div class="edit-section">
+      <label for="title-input">Edit Title</label>
+      <input
+        id="title-input"
+        type="text"
+        [(ngModel)]="editTitle"
+        class="title-input"
+        placeholder="Album title"
+      />
+      <button class="btn-save" (click)="onSave()" [disabled]="isSaving">
+        {{ isSaving ? 'Saving...' : 'Save' }}
+      </button>
+      <span class="saved-msg" *ngIf="savedMsg">{{ savedMsg }}</span>
+    </div>
+
+    <div class="actions">
+      <a [routerLink]="['/albums', album.id, 'photos']" class="btn-primary">View Photos</a>
+      <a routerLink="/albums" class="btn-back">← Back to Albums</a>
+    </div>
+  </div>
+</div>
+
+<div class="loading" *ngIf="isLoading">
+  <div class="spinner"></div>
+  <p>Loading album...</p>
+</div>

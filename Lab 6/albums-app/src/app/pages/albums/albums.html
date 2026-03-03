@@ -1,0 +1,23 @@
+<div class="albums-page">
+  <div class="page-header">
+    <h2>All Albums</h2>
+    <span class="count" *ngIf="!isLoading">{{ albums.length }} albums</span>
+  </div>
+
+  <div class="loading" *ngIf="isLoading">
+    <div class="spinner"></div>
+    <p>Loading albums...</p>
+  </div>
+
+  <ul class="album-list">
+    <li *ngFor="let album of albums" class="album-item">
+      <a [routerLink]="['/albums', album.id]" class="album-link">
+        <span class="album-id">#{{ album.id }}</span>
+        <span class="album-title">{{ album.title }}</span>
+      </a>
+      <button class="btn-delete" (click)="onDelete(album.id)">Delete</button>
+    </li>
+  </ul>
+
+  <p class="empty" *ngIf="!isLoading && albums.length === 0">No albums found.</p>
+</div>

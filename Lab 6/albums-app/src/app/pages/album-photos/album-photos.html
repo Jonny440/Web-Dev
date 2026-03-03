@@ -1,0 +1,22 @@
+<div class="photos-page">
+  <div class="page-header" *ngIf="!isLoading">
+    <a [routerLink]="['/albums', albumId]" class="btn-back">← Back to Album</a>
+    <h2>Album #{{ albumId }} Photos</h2>
+    <span class="count">{{ photos.length }} photos</span>
+  </div>
+
+  <div class="loading" *ngIf="isLoading">
+    <div class="spinner"></div>
+    <p>Loading photos...</p>
+  </div>
+
+  <div class="photos-grid">
+    <div *ngFor="let photo of photos" class="photo-item">
+      <img
+        [src]="photo.thumbnailUrl"
+        [alt]="photo.title"
+      />
+      <span>{{ photo.title }}</span>
+    </div>
+  </div>
+</div>

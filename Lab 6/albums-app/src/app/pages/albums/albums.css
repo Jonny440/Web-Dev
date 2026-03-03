@@ -1,0 +1,93 @@
+.albums-page {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.page-header h2 {
+  font-size: 24px;
+  color: black;
+  margin: 0;
+}
+
+.count {
+  color: gray;
+  font-size: 14px;
+}
+
+.loading {
+  text-align: center;
+  padding: 50px;
+  color: gray;
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 4px solid silver;
+  border-top: 4px solid blue;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 10px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.album-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.album-item {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 1px solid silver;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+}
+
+.album-item:hover {
+  border-color: blue;
+}
+
+.album-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+  text-decoration: none;
+  color: black;
+}
+
+.album-id {
+  font-size: 12px;
+  font-weight: bold;
+  color: blue;
+  background: aliceblue;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.album-title {
+  font-size: 16px;
+  color: black;
+}
+
+.empty {
+  text-align: center;
+  color: gray;
+  padding: 40px;
+}

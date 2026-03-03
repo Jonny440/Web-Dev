@@ -1,0 +1,63 @@
+.about-page {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  font-family: sans-serif;
+  color: black;
+}
+
+.about-card {
+  background: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: gray;
+  margin-bottom: 10px;
+  display: block;
+}
+
+h2 {
+  font-size: 30px;
+  margin: 0 0 15px 0;
+  color: black;
+}
+
+.description {
+  color: black;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.info-item {
+  background: ghostwhite;
+  border: 1px solid silver;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: blue;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background: darkblue;
+}
